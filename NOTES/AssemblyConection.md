@@ -1,4 +1,4 @@
-## Comand
+## Command
 ```
 javap -c MyFirstClass
 ```
@@ -22,3 +22,4 @@ public class MyFirstClass {
        8: return
 }
 ```
+> Link: https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html#advanced-options-for-java

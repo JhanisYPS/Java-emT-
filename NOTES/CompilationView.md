@@ -1,4 +1,4 @@
-## Comand
+## Command
 ```
 java -XX:+PrintCompilation MyFirstClass
 ```
@@ -63,3 +63,5 @@ java -XX:+PrintCompilation MyFirstClass
      95   28 Hello, World!      1
  java.util.KeyValueHolder::getKey (5 bytes)
 ```
+
+> Link: https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html#advanced-options-for-java
