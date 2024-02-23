@@ -1,18 +1,22 @@
-## Getting Started
+## Desafio: Adivinhação
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Crie um programa que simula um jogo de adivinhação, que deve gerar um número aleatório entre 0 e 100 e pedir para que o usuário tente adivinhar o número, em até 5 tentativas. A cada tentativa, o programa deve informar se o número digitado pelo usuário é maior ou menor do que o número gerado.
 
-## Folder Structure
+Dicas:
 
-The workspace contains two folders by default, where:
+1. Para gerar um número aleatório em Java: new Random().nextInt(100);
+2. Utilize o Scanner para obter os dados do usuário;
+3. Utilize uma variável para contar as tentativas;
+4. Utilize um loop para controlar as tentativas;
+5. Utilize a instrução break; para interromper o loop.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+---
+## Desafio: Calculadora de temperatura
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Escreva um programa que converta uma temperatura em graus Celsius para Fahrenheit. Utilize variáveis para representar os valores das temperaturas e imprima no console o valor convertido de Celsius para Fahrenheit.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Dica: A fórmula para converter temperaturas de graus Celsius para Fahrenheit é: (temperatura * 1.8) + 32.
 
-## Dependency Management
+Depois de finalizar, testar e conferir que seu programa foi executado com sucesso, crie uma variável inteira para exibir a temperatura em Fahrenheit sem casas decimais. Lembre-se que provavelmente você precisará fazer um casting de valores.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
