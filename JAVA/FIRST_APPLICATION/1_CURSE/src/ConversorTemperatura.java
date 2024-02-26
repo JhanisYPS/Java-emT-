@@ -1,6 +1,7 @@
 import java.util.Scanner; // import the Scanner class
 
 public class ConversorTemperatura {
+
     static double inputUsuario(){
         //Solicita entrada de dado do usuário no prompt de comando
         System.out.println("====== Calculadora Celcius-Fahrenheit ======");
@@ -29,6 +30,7 @@ public class ConversorTemperatura {
         int temperatura = calculoConversao(inputUsuario());
         imprimeResultado(temperatura);
     }
+
 
     
 
