@@ -8,7 +8,7 @@ public class UrlBiggerImage {
             String path = url.getPath();
             
             // Find the index of "@." and ".jpg" in the path
-            int startIndex = path.indexOf("@") + 1; // Adding 2 to skip "@."
+            int startIndex = path.indexOf("@") + 1; // Adding 1 to skip "@"
             int endIndex = path.indexOf(".jpg");
 
             // Extract the substring between "@." and ".jpg"

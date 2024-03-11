@@ -8,40 +8,32 @@ import java.net.http.HttpResponse.BodyHandlers;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.net.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // Fazer uma conexão HTTP e buscar os top 250 films
+        // Fazer uma conexão HTTP e buscar os top 250 contents
         String url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060"; // API do IMDB
-        URI address = URI.create(url);
-
-        HttpClient client =   HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder(address).GET().build();
-
-        //Como eu quero ler os dados
-        HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-        String body = response.body();
-
+        
+        var http = new HttpClientPersonal();
+        String body = http.searchData(url);
+        
         //Print dos dados
         System.out.println(body);
 
-        // Extrair dados de foco: título, poster, classificação
-        JsonParser parser = new JsonParser();
-        List<Map<String, String>> filmsList = parser.parse(body);
-        System.out.println(filmsList.size());
-        System.out.println(filmsList.get(0));
+        
+        System.out.println(contentList.size());
+        System.out.println(contentList.get(0));
         
         //Formatação de desafio
         
 
-        for (Map<String,String> film : filmsList) {
+        for (Map<String,String> content : contentList) {
 
             //Pegar imagem grande
-            String urlImagem = UrlBiggerImage.splitTextImdb(film.get("image"));
+            String urlImagem = UrlBiggerImage.splitTextImdb(content.get("image"));
 
             //Pagar Json Rating em formato string
-            String imDbRating = film.get("imDbRating");
+            String imDbRating = content.get("imDbRating");
             //Transforma String em Double
             double imDbStarRating = Double.parseDouble(imDbRating)/2;
             //Arredonda o Double em valor inteiro
@@ -58,12 +50,12 @@ public class App {
             //\u001b[48;5;26m - Deixa o fundo do terminal azul
             //\u001b[38;5;240m - Deixa a letra cinza
             //\u001b[m - Indica final da formatação
-            System.out.println("\u001b[48;5;26m\u001b[38;5;240mtitle: \u001b[m"+"\u001b[48;5;26m"+film.get("title")+ " \u001b[m");
+            System.out.println("\u001b[48;5;26m\u001b[38;5;240mtitle: \u001b[m"+"\u001b[48;5;26m"+content.get("title")+ " \u001b[m");
             System.out.println(urlImagem);
             System.out.println("\u001b[38;5;220m" + stringComOsAs + "\u001b[m");
             
             //
-            String titulo = film.get("title");
+            String titulo = content.get("title");
 
             InputStream inputStream = new URL(urlImagem).openStream();
             String nomeArquivo = titulo + ".png";
